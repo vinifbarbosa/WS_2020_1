@@ -25,9 +25,9 @@ app.use(bodyParser.json());
 app.use(mongoSanatize());
 
 /**
- * Para teste inicial
+ * Serviços de clientes
  */
 
- app.get("/",(req,res) => res.send("Oi!"));
+ app.use("/clientes", require("./routes/clientes"));
 
  module.exports = app;
