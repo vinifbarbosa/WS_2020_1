@@ -23,20 +23,15 @@ const controller = {
              filename: name,
              contentType:mimetype
             };
-            
-        if(metadados.contentType === "image/jpeg" || metadados.contentType === "image/jpg" || metadados.contentType === "image/png"){
-            Arquivo.write(metadados, readStream, (erro, arquivo)=>{
-                fs.unlinkSync(nomeArquivo);
-                if(erro){
-                    console.log(erro);
-                        res.status(500).json({erro: "Erro ao tentar salvar o arquivo"})
-                } else{
-                res.status(201).json({mensagem: "Arquivo salvo", id: arquivo._id});
-                }
-            });
-        }else{
-            res.status(500).json({mensagem: "Arquivo inválido"});
-        }
+        Arquivo.write(metadados, readStream, (erro, arquivo)=>{
+            fs.unlinkSync(nomeArquivo);
+            if(erro){
+                console.log(erro);
+                    res.status(500).json({erro: "Erro ao tentar salvar o arquivo"})
+            } else{
+            res.status(201).json({mensagem: "Arquivo salvo", id: arquivo._id});
+            }
+        });
     }
 };
 module.exports = controller;

@@ -1,11 +1,10 @@
-const express = require ('express');
+const express = require ("express");
 
-const dowloadCtrl = require ('../controller/DownloadController');
+const dowloadCtrl = require ("../controller/DownloadController");
 
 const router= express.Router();
 
-router.get('/listar', dowloadCtrl.listarTodosArquivos);
-router.get('/normal/:id', dowloadCtrl.realizarDownload);
-router.get('/thumb/:id', dowloadCtrl.realizarDownloadThumb);
+router.get("/listar", dowloadCtrl.listarTodosArquivos);
+router.get("/:id", dowloadCtrl.realizarDownload);
 
 module.exports = router;
