@@ -1,9 +1,9 @@
 const {
      createModel
- } = require('mongoose-gridfs');
+ } = require("mongoose-gridfs");
 
 const Arquivo = createModel({
-    modelName: 'Arquivo'
+    modelName: "Arquivo"
 });
 
 module.exports = Arquivo;

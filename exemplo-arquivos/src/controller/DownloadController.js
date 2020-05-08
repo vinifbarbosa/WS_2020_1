@@ -44,7 +44,7 @@ const controller = {
                     Arquivo.findById(id, (erro, anexo) =>{
                         if(erro){
                             console.log(erro);
-                            res.status(500).json({mensagem: 'Erro ao tentar fazer Download'});
+                            res.status(500).json({mensagem: "Erro ao tentar fazer Download"});
                         } else{
                             if(anexo){
                                 const nomeArquivo = anexo.filename;
@@ -54,7 +54,7 @@ const controller = {
                                 res.attachment(nomeArquivo); 
                                 readStream.pipe(res);
                             } else{
-                                res.status(404).json({mensagem: 'Arquivo não encontrado'});
+                                res.status(404).json({mensagem: "Arquivo não encontrado"});
                             }
                         }
                     });
